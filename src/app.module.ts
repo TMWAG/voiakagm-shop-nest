@@ -20,6 +20,7 @@ import { StatusModule } from './status/status.module';
 import { DeliveryServiceModule } from './delivery-service/delivery-service.module';
 import { OrderModule } from './order/order.module';
 import { UserAddressModule } from './user-address/user-address.module';
+import { Vendor } from './vendor/vendor.model';
 
 @Module({
   controllers: [],
@@ -35,7 +36,7 @@ import { UserAddressModule } from './user-address/user-address.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles, Feedback],
+      models: [User, Role, UserRoles, Feedback, Vendor],
       autoLoadModels: true,
     }),
     UsersModule,
