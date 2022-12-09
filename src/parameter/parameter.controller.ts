@@ -7,7 +7,7 @@ import {
   Put,
   UseGuards,
 } from '@nestjs/common';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/roles/roles-auth.decorator';
 import { RolesGuard } from 'src/roles/roles.guard';
 import { ChangeParameterNameDto } from './dto/change-parameter-name.dto';
@@ -16,6 +16,7 @@ import { DeleteParameterDto } from './dto/delete-parameter.dto';
 import { Parameter } from './parameter.model';
 import { ParameterService } from './parameter.service';
 
+@ApiTags('Параметры')
 @Controller('parameter')
 export class ParameterController {
   constructor(private parameterService: ParameterService) {}

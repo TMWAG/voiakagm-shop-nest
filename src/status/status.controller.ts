@@ -7,7 +7,7 @@ import {
   Put,
   UseGuards,
 } from '@nestjs/common';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/roles/roles-auth.decorator';
 import { RolesGuard } from 'src/roles/roles.guard';
 import { CreateStatusDto } from './dto/create-status.dto';
@@ -16,6 +16,7 @@ import { EditStatusNameDto } from './dto/edit-status-name.dto';
 import { Status } from './status.model';
 import { StatusService } from './status.service';
 
+@ApiTags('Статусы заказов')
 @Controller('status')
 export class StatusController {
   constructor(private statusService: StatusService) {}
