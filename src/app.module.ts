@@ -21,6 +21,8 @@ import { DeliveryServiceModule } from './delivery-service/delivery-service.modul
 import { OrderModule } from './order/order.module';
 import { UserAddressModule } from './user-address/user-address.module';
 import { Vendor } from './vendor/vendor.model';
+import { Product } from './product/product.model';
+import { Category } from './category/category.model';
 
 @Module({
   controllers: [],
@@ -36,7 +38,7 @@ import { Vendor } from './vendor/vendor.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles, Feedback, Vendor],
+      models: [User, Role, UserRoles, Feedback, Vendor, Product, Category],
       autoLoadModels: true,
     }),
     UsersModule,
