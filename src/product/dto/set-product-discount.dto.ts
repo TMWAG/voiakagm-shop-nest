@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt } from 'class-validator';
+import { IsInt, Max, Min } from 'class-validator';
 
 export class SetProductDiscountDto {
   @ApiProperty({
@@ -14,5 +14,7 @@ export class SetProductDiscountDto {
     description: 'Скидка',
   })
   @IsInt({ message: 'Должна быть целым числом' })
+  @Min(1, { message: 'Должна быть больше 0' })
+  @Max(99, { message: 'не может быть больше 100' })
   readonly discount: number;
 }
