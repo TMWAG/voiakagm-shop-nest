@@ -20,14 +20,13 @@ export class AuthService {
   }
 
   async registration(userDto: CreateUserDto) {
-    console.log(userDto);
     if (!(await this.userService.isEmailUnique(userDto.email))) {
       throw new HttpException(
         UserError.notUnique.email,
         HttpStatus.BAD_REQUEST,
       );
     }
-    if (!(await this.userService.isPhoneUnique(userDto))) {
+    if (!(await this.userService.isPhoneUnique(userDto.phone))) {
       throw new HttpException(
         UserError.notUnique.phone,
         HttpStatus.BAD_REQUEST,
