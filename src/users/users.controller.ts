@@ -1,8 +1,21 @@
-import { Body, Controller, Get, Put, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Put,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { PaginationDto } from 'src/product/dto/pagination.dto';
 import { Roles } from 'src/roles/roles-auth.decorator';
 import { RolesGuard } from 'src/roles/roles.guard';
+import { AddTgLinkDto } from './dto/add-tg-link.dto';
 import { AddUserRoleDto } from './dto/add-user-role.dto';
+import { AddVkLinkDto } from './dto/add-vk-link.dto';
+import { DeleteUserByIdDto } from './dto/delete-user-by-id';
 import { User } from './users.model';
 import { UsersService } from './users.service';
 
@@ -16,8 +29,8 @@ export class UsersController {
   @Get('/all')
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
-  getAll() {
-    return this.usersService.getAllUsers();
+  getAll(@Query() dto: PaginationDto) {
+    return this.usersService.getAllUsers(dto);
   }
 
   @ApiOperation({ summary: 'Добавление роли пользователю' })
@@ -25,7 +38,32 @@ export class UsersController {
   @Put('/add_role')
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
-  addRole(@Body() dto: AddUserRoleDto) {
+  addRoleById(@Body() dto: AddUserRoleDto) {
     return this.usersService.addRoleById(dto);
+  }
+
+  @ApiOperation({ summary: 'Добавление пользователю ссылки на телеграм' })
+  @ApiResponse({ status: 200, type: Boolean })
+  @Put('/add_tg_link')
+  @UseGuards(JwtAuthGuard)
+  addTgLinkById(@Body() dto: AddTgLinkDto) {
+    return this.usersService.addTgLinkById(dto);
+  }
+
+  @ApiOperation({ summary: 'Добавление пользователю ссылки на ВК' })
+  @ApiResponse({ status: 200, type: Boolean })
+  @Put('/add_vk_link')
+  @UseGuards(JwtAuthGuard)
+  addVkLinkById(@Body() dto: AddVkLinkDto) {
+    return this.usersService.addVkLinkById(dto);
+  }
+
+  @ApiOperation({ summary: 'Удаление пользователя' })
+  @ApiResponse({ status: 200, type: Boolean })
+  @Delete('/delete')
+  @Roles('ADMIN')
+  @UseGuards(RolesGuard)
+  deleteById(@Body() dto: DeleteUserByIdDto) {
+    return this.usersService.deleteById(dto);
   }
 }

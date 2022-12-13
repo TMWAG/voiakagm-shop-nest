@@ -19,7 +19,7 @@ interface UserCreationAttribute {
   password: string;
 }
 
-@Table({ tableName: 'users' })
+@Table({ tableName: 'users', updatedAt: false })
 export class User extends Model<User, UserCreationAttribute> {
   @ApiProperty({
     example: '1',
