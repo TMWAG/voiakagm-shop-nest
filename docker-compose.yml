@@ -1,0 +1,29 @@
+services:
+  server:
+    container_name: server
+    build: 
+      context: .
+    env_file:
+      - .development.env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 5000:5000
+      - 9229:9229
+    depends_on:
+      - postgres
+    command: npm run start:dev
+    restart: always
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    env_file:
+      - .development.env
+    environment:
+      - PG_DATA=/var/lib/postgresql/data
+    restart: always
+    ports:
+      - 5432:5432
+volumes:
+  pgdata:
