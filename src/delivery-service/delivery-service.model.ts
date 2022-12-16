@@ -5,7 +5,7 @@ interface DeliveryServiceCreationAttribute {
   name: string;
 }
 
-@Table({ tableName: 'delivery_services' })
+@Table({ tableName: 'delivery_services', timestamps: false })
 export class DeliveryService extends Model<
   DeliveryService,
   DeliveryServiceCreationAttribute

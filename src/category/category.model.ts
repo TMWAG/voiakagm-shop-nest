@@ -6,7 +6,7 @@ interface CategoryCreationAttribute {
   name: string;
 }
 
-@Table({ tableName: 'categories' })
+@Table({ tableName: 'categories', timestamps: false })
 export class Category extends Model<Category, CategoryCreationAttribute> {
   @ApiProperty({
     example: 1,

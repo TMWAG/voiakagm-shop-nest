@@ -5,7 +5,7 @@ interface StatusCreationAttributes {
   name: string;
 }
 
-@Table({ tableName: 'statuses' })
+@Table({ tableName: 'statuses', timestamps: false })
 export class Status extends Model<Status, StatusCreationAttributes> {
   @ApiProperty({
     example: 1,

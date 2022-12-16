@@ -5,7 +5,7 @@ interface ParameterCreationAttribute {
   name: string;
 }
 
-@Table({ tableName: 'parameters' })
+@Table({ tableName: 'parameters', timestamps: false })
 export class Parameter extends Model<Parameter, ParameterCreationAttribute> {
   @ApiProperty({
     example: '1',
