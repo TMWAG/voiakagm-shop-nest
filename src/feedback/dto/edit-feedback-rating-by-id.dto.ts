@@ -1,23 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsInt, IsString, Max, Min } from 'class-validator';
+import { IsInt, Max, Min } from 'class-validator';
 
-export class CreateFeedbackDto {
+export class EditFeedbackRatingByIdDto {
   @ApiProperty({
-    example: 2,
-    description: 'Id товара',
+    example: 23,
+    description: 'Id отзыва',
   })
   @Type(() => Number)
   @IsInt({ message: 'Должен быть целым числом' })
-  readonly productId: number;
-
-  @ApiProperty({
-    example: 'Хорошее что-то',
-    description: 'Текст отзыва',
-  })
-  @Type(() => String)
-  @IsString({ message: 'Должно быть строкой' })
-  readonly text: string;
+  readonly id: number;
 
   @ApiProperty({
     example: 4,
@@ -25,8 +17,8 @@ export class CreateFeedbackDto {
     description: 'Оценка товара',
   })
   @Type(() => Number)
-  @IsInt({ message: 'Должна быть целым числом' })
   @Min(1, { message: 'Не может быть меньше 1' })
   @Max(5, { message: 'Не может быть больше 5' })
+  @IsInt({ message: 'Должна быть целым числом ' })
   readonly rating: 1 | 2 | 3 | 4 | 5;
 }

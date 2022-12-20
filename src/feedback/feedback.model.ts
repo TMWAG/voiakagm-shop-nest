@@ -6,14 +6,17 @@ import {
   Model,
   Table,
 } from 'sequelize-typescript';
+import { Product } from 'src/product/product.model';
 import { User } from 'src/users/users.model';
 
 interface FeedBackCreationAttribute {
   text: string;
   rating: 1 | 2 | 3 | 4 | 5;
+  userId: number;
+  productId: number;
 }
 
-@Table({ tableName: 'feedback' })
+@Table({ tableName: 'feedback', updatedAt: false })
 export class Feedback extends Model<Feedback, FeedBackCreationAttribute> {
   @ApiProperty({
     example: '1',
@@ -24,7 +27,7 @@ export class Feedback extends Model<Feedback, FeedBackCreationAttribute> {
 
   @ApiProperty({
     example: 'Мои любимые противопехотные мины KCAS',
-    description: 'Текст Пользовательского отзыва',
+    description: 'Текст пользовательского отзыва',
   })
   @Column({ type: DataType.TEXT, allowNull: true })
   text: string;
@@ -40,4 +43,8 @@ export class Feedback extends Model<Feedback, FeedBackCreationAttribute> {
   @ForeignKey(() => User)
   @Column({ type: DataType.INTEGER, allowNull: false })
   userId: number;
+
+  @ForeignKey(() => Product)
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  productId: number;
 }
