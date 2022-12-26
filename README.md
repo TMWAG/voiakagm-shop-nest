@@ -1,73 +1,52 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# VoiakaGM-shop-nest
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## !!!АКТУАЛЬНО ТОЛЬКО ДЛЯ РАЗРАБОТКИ!!!
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Требования
 
-## Description
++ Docker-Compose
++ Наличие папки docker в домашней директории пользователя, от имени которого запускается Docker-Compose, с правами на запись и чтение для всех пользователей, рекурсивно
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+## Установка и запуск
 
 ```bash
-$ npm install
+$ git clone git@github.com:TMWAG/voiakagm-shop-nest.git\
+$ cd voiakagm-shop-nest
+$ docker-compose up -d
 ```
 
-## Running the app
+## Документация
 
-```bash
-# development
-$ npm run start
+### [Конечные точки API](http://localhost:5000/api/docs)
 
-# watch mode
-$ npm run start:dev
+### [Даталогическая модель БД](VoiakaGM.drawio)
 
-# production mode
-$ npm run start:prod
-```
+## Дополнительное ПО для разработки
 
-## Test
+### PGAdmin(Контейнеризованный)
 
-```bash
-# unit tests
-$ npm run test
+#### Данные для входа
 
-# e2e tests
-$ npm run test:e2e
++ Почта: ```dev@mail.com```
 
-# test coverage
-$ npm run test:cov
-```
++ Пароль: ```password```
 
-## Support
++ [Страница](http://localhost:5050)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+#### Данные для подключения к бд
 
-## Stay in touch
++ Имя/Адрес сервера: ```postgres```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
++ Порт: ```5432```
 
-## License
++ Имя пользователя: ```tmwag```
 
-Nest is [MIT licensed](LICENSE).
++ Пароль: ```98425```
+
+## Обратная связь
+
++ Discord: ```TMWAG#3542```
+
++ [VK](https://vk.com/tmwag)
+
++ Telegram ```@TMW4G```
