@@ -23,6 +23,7 @@ import { UserAddressModule } from './user-address/user-address.module';
 import { Vendor } from './vendor/vendor.model';
 import { Product } from './product/product.model';
 import { Category } from './category/category.model';
+import { Characteristic } from './characteristic/characteristic.model';
 
 @Module({
   controllers: [],
@@ -47,6 +48,7 @@ import { Category } from './category/category.model';
         Product,
         Category,
         Feedback,
+        Characteristic,
       ],
       autoLoadModels: true,
     }),

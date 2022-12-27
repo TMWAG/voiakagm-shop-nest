@@ -4,10 +4,12 @@ import {
   Column,
   DataType,
   ForeignKey,
+  HasMany,
   Model,
   Table,
 } from 'sequelize-typescript';
 import { Category } from 'src/category/category.model';
+import { Characteristic } from 'src/characteristic/characteristic.model';
 import { Vendor } from 'src/vendor/vendor.model';
 
 interface ProductCreationAttribute {
@@ -78,4 +80,7 @@ export class Product extends Model<Product, ProductCreationAttribute> {
 
   @BelongsTo(() => Category)
   category: Category;
+
+  @HasMany(() => Characteristic)
+  characteristics: Characteristic[];
 }
