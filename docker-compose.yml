@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   server:
     container_name: server
@@ -41,6 +43,4 @@ services:
       - $HOME/docker/volumes/pgadmin/:/var/lib/pgadmin
     depends_on:
       - postgres
-volumes:
-  pgdata:
-  pgadmin-data:
+
