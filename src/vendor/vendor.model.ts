@@ -6,7 +6,7 @@ interface VendorCreationAttribute {
   name: string;
 }
 
-@Table({ tableName: 'vendors' })
+@Table({ tableName: 'vendors', timestamps: false })
 export class Vendor extends Model<Vendor, VendorCreationAttribute> {
   @ApiProperty({
     example: 1,
