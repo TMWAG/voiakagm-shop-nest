@@ -42,7 +42,7 @@ export class CharacteristicService {
   ): Promise<boolean> {
     try {
       const characteristic = await this.characteristicRepository.update(
-        { productId: dto.parameterId },
+        { parameterId: dto.parameterId },
         { where: { id: dto.id } },
       );
       return Boolean(characteristic);

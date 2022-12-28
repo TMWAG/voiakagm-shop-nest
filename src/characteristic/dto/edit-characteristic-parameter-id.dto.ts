@@ -13,7 +13,7 @@ export class EditCharacteristicParameterIdDto {
 
   @ApiProperty({
     example: 4,
-    description: 'Id товара',
+    description: 'Id параметра',
   })
   @Type(() => Number)
   @IsInt({ message: 'Должен быть целым числом' })
