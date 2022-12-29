@@ -24,6 +24,7 @@ import { Vendor } from './vendor/vendor.model';
 import { Product } from './product/product.model';
 import { Category } from './category/category.model';
 import { Characteristic } from './characteristic/characteristic.model';
+import { UserAddress } from './user-address/user-address.model';
 
 @Module({
   controllers: [],
@@ -49,6 +50,7 @@ import { Characteristic } from './characteristic/characteristic.model';
         Category,
         Feedback,
         Characteristic,
+        UserAddress,
       ],
       autoLoadModels: true,
     }),
