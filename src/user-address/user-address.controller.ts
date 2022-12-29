@@ -54,6 +54,7 @@ export class UserAddressController {
 
   @ApiOperation({ summary: 'Изменение названия адреса' })
   @ApiResponse({ status: 200, type: Boolean })
+  @Put('/edit_name')
   @UseGuards(JwtAuthGuard)
   editUserAddressNameById(
     @Body() dto: EditUserAddressNameDto,
