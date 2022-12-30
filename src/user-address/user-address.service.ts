@@ -23,8 +23,7 @@ export class UserAddressService {
       const userId = Number(Object.values(decryptedToken)[1]);
       const address = await this.userAddressRepository.create({
         userId,
-        name: dto.name,
-        address: dto.address,
+        ...dto,
       });
       return address;
     } catch (e) {
