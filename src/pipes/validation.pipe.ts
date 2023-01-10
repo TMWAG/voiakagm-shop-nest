@@ -11,6 +11,9 @@ export class ValidationPipe implements PipeTransform<any> {
       return value;
     }
     const obj = plainToInstance(metatype, value);
+    if (typeof obj === 'undefined') {
+      return value;
+    }
     const errors = await validate(obj);
     if (errors.length) {
       const messages = errors.map((err) => {

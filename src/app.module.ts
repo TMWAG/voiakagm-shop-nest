@@ -25,11 +25,16 @@ import { Product } from './product/product.model';
 import { Category } from './category/category.model';
 import { Characteristic } from './characteristic/characteristic.model';
 import { UserAddress } from './user-address/user-address.model';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   controllers: [],
   providers: [],
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, 'static'),
+    }),
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
     }),
